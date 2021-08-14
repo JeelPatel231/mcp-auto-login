@@ -1,0 +1,6 @@
+{
+    "name": "mc-auto-joiner",
+    "description": "later",
+    "stack":"container",
+    "image":"Dockerfile"
+  }
