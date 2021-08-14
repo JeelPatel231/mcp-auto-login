@@ -1,0 +1,15 @@
+env: # Environment variables to pass to all tasks
+    CIRRUS_WORKING_DIR: "/tmp/ci" # Where to clone the aosp-builder repo
+
+task:
+    name: mc # Project name
+    timeout_in: 120m # Otherwise it will timeout at 60m automatically, 120m highest in free account
+    container:
+      image: inok2341/builder:latest 
+      cpu: 1  #8 or less cpu for dummy build, 8 cpu for the final build, 8cpu highest for free accounts. Don't try to use more than 8cpu as free user, you may get blocked by ci.
+      memory: 2G
+
+    setup_script:
+    - chmod +x script.sh
+    execute_script:
+    - bash script.sh
