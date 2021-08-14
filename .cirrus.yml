@@ -11,5 +11,7 @@ task:
 
     setup_script:
     - chmod +x script.sh
+    - sudo apt update 
+    - sudo apt install --yes --force-yes mono-runtime libmono-reflection-cil
     execute_script:
     - bash script.sh
